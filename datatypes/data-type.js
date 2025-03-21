@@ -2,6 +2,10 @@
 // ✅ Stored directly in memory
 // ✅ Immutable (Cannot be changed directly)
 // ✅ Compared by value (not by reference)
+
+// "If we change the value of the variable, it will not change the value in the memory"
+// ✅ True for primitive values
+// ❌ False for reference values (unless copied properly)
 let name = "John"; // string
 let age = 30; // integer
 let isStudent = true; // boolean
@@ -63,3 +67,20 @@ let obj2 = obj1; // Reference is copied
 // obj2 store obj1 reference
 obj2.name = "Manna";
 console.log(obj1.name); // "Manna" (Both point to the same object)
+
+// some weird  example
+
+console.log(typeof undefined); // "undefined"
+console.log(typeof null); // "object"
+console.log(typeof NaN); // "number"
+console.log(typeof Symbol()); // "symbol"
+console.log(typeof []); // "object"
+console.log(typeof {}); // "object"
+console.log(typeof function () {}); // "function"
+
+console.log(NaN === NaN); // false
+console.log(null > 0); // false
+console.log(null < 0); // false
+console.log(null == 0); // false
+console.log(null >= 0); // true
+console.log(null <= 0); // true
