@@ -1,3 +1,8 @@
+const original = { a: 1, b: 2 };
+const newObject = (original["d"] = 20); // this will create a new property d when the fiven property does not exist
+console.log(newObject); // 20
+console.log(original); // { a: 1, b: 2, d: 20 }
+
 // Creates a new object with the specified prototype.
 // Prototype-based inheritance
 let parent = { greet: () => "Hello!" };
@@ -51,13 +56,13 @@ console.log(obj2); // { name: "Manna", details: { age: 22 } }
 // 2️⃣ Deep Copy
 // A deep copy creates a completely independent clone, including nested objects.
 // Methods to Create a Deep Copy
-let obj2 = { name: "Nandan", details: { age: 21 } };
-let obj3 = JSON.parse(JSON.stringify(obj2));
+// let obj2 = { name: "Nandan", details: { age: 21 } };
+// let obj3 = JSON.parse(JSON.stringify(obj2));
 
-obj2.details.age = 22; // ✅ Does NOT affect obj1
+// obj2.details.age = 22; // ✅ Does NOT affect obj1
 
-console.log(obj2.details.age); // 21
-console.log(obj3.details.age); // 22
+// console.log(obj2.details.age); // 21
+// console.log(obj3.details.age); // 22
 //  Cons: Does not work for functions, undefined, Date, or Map/Set.
 
 let obj4 = { name: "Nandan", details: { age: 21 }, date: new Date() };
